@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Button, StyleSheet, Text } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function RandomJokeScreen({ navigation }) {
   return (
