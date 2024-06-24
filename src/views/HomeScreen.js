@@ -11,7 +11,6 @@ export default function HomeScreen({ navigation }) {
   console.log(joke)
 
   const onRandomJokeClicked = () =>{
-    console.log("clicked on random joke")
     try{
       dispatch(fetchRandomJoke());
     }catch(err){
@@ -29,7 +28,6 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* <Text>Some Text</Text> */}
       <Button title="Random Joke" style ={styles.btnContainer} onPress={onRandomJokeClicked} />
       <Button title="Text Input" style ={styles.btnContainer} onPress={() => navigation.navigate('TextInput')} />
       <Button title="Never-ending Jokes" style ={styles.btnContainer} onPress={() => navigation.navigate('NeverEndingJokeList')} />
