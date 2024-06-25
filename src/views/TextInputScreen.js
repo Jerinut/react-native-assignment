@@ -16,17 +16,7 @@ export default function TextInputScreen({ navigation }) {
     dispatch(fetchJokeWithTextInput({ searchText }));
   };
 
-  // useFocusEffect(() =>{
-  //   dispatch(clearJokeState());
-  // },[] );
-
-  // useEffect(() => {
-  //   if (joke) {
-  //     Alert.alert('Random Joke', joke.value, [
-  //       { text: 'OK', onPress: () => console.log('OK Pressed') },
-  //     ]);
-  //   }
-  // }, [joke]);
+  
 
   return (
     <View style={styles.container}>
@@ -37,7 +27,7 @@ export default function TextInputScreen({ navigation }) {
         onChangeText={setSearchText}
       />
       <Button title="Search" style={styles.btnContainer} onPress={handleSearch} />
-      <Text>{joke && joke.result.length > 0 ? joke.result.map(j => j.value).join('\n\n') : 'No jokes to display'}</Text>
+      <Text>{joke.result && joke.result.length > 0 ? joke.result.map(j => j.value).join('\n\n') : 'No jokes to display'}</Text>
     </View>
   );
 }

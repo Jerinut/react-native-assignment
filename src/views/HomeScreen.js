@@ -28,10 +28,15 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <View style ={styles.btnContainer}>
       <Button title="Random Joke" style ={styles.btnContainer} onPress={onRandomJokeClicked} />
+      </View>
+      <View style ={styles.btnContainer}>
       <Button title="Text Input" style ={styles.btnContainer} onPress={() => navigation.navigate('TextInput')} />
+      </View>
+      <View style ={styles.btnContainer}>
       <Button title="Never-ending Jokes" style ={styles.btnContainer} onPress={() => navigation.navigate('NeverEndingJokeList')} />
-    
+      </View>
     </View>
   );
 }
@@ -44,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnContainer: {
-    flex:1,
-    margin:10,
+ // Add space at the top
+    marginBottom: 20, // Add space at the bottom
   }
 });
