@@ -12,7 +12,6 @@ export default function TextInputScreen({ navigation }) {
       Alert.alert('Validation Error', 'Search Text cannot be empty');
       return;
     }
-    console.log(searchText,"search text")
     dispatch(fetchJokeWithTextInput({ searchText }));
   };
 

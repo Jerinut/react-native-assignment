@@ -4,7 +4,7 @@ const BASE_URL = 'https://api.chucknorris.io/jokes/'
 const {createSlice, createAsyncThunk, isRejectedWithValue} = require ('@reduxjs/toolkit');
 export const fetchRandomJoke = createAsyncThunk("fetch Jokes",async () =>{
     try{
-        const res = await axios.get('https://api.chucknorris.io/jokes/random');
+        const res = await axios.get(`${BASE_URL}random`);
         return res.data;
     }catch(err){
        console.error(err.message)
@@ -13,8 +13,6 @@ export const fetchRandomJoke = createAsyncThunk("fetch Jokes",async () =>{
     
 }
 )
-
-
 
 export const fetchJokeWithTextInput = createAsyncThunk("fetch Jokes with Text ",async ({searchText},{rejectWithValue}) =>{
     try{
@@ -38,7 +36,7 @@ const JokeSlice = createSlice({
     searchText:""
   },
   reducers: {
-    // Add this reducer to clear the state
+    // reducer to clear the state 
     clearState: (state) => {
       state.data = null;
       state.isLoading = false;
