@@ -7,9 +7,9 @@ import { useDispatch,useSelector } from 'react-redux';
 export default function HomeScreen({ navigation }) {
   const dispatch = useDispatch()
   const joke = useSelector((state) => state.joke.data);
-  const isLoading = useSelector((state) => state.joke.isLoading);
-  console.log(joke)
+  
 
+  //button click listener
   const onRandomJokeClicked = () =>{
     try{
       dispatch(fetchRandomJoke());
@@ -18,6 +18,7 @@ export default function HomeScreen({ navigation }) {
     }
   }
 
+  // Listens to changes in the joke state
   useEffect(() => {
     if (joke) {
       Alert.alert('Random Joke', joke.value, [
@@ -49,7 +50,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnContainer: {
- // Add space at the top
     marginBottom: 20, // Add space at the bottom
   }
 });

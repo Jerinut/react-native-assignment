@@ -13,21 +13,14 @@ export default function NeverEndingJokeListScreen({ navigation }) {
     dispatch(fetchRandomJoke());
   };
 
+  // again checking for state changes in joke
   useEffect(() => {
     if (joke) {
       setJokes((oldJokes) => [...oldJokes, joke]);
     }
   }, [joke]);
 
-  useFocusEffect(
-    React.useCallback(() => {
-      // This function runs when the screen comes into focus
-      return () => {
-        // This function runs when the screen goes out of focus
-        setJokes([]);
-      };
-    }, [])
-  );
+  
 
   return (
     <View style={styles.container}>

@@ -7,7 +7,7 @@ import {store} from './src/store/index'
 import { Provider } from 'react-redux';
 const Stack = createNativeStackNavigator()
 export default function App(){
-
+// Navigation stacks and provider for the redux store is present 
     return(
       <Provider store={store}> 
      <NavigationContainer>
